@@ -1,9 +1,9 @@
 // CRIE UMA LÓGICA AQUI
-let numero = 5
+let resultado = 5
 do {
-    console.log(numero)
-    numero++ 
-} while (numero < 10)
-console.log(numero)
+    console.log(resultado)
+    resultado++ 
+} while (resultado < 10)
+console.log(resultado)
 // === NÃO MODIFIQUE NADA ABAIXO ============
 module.exports = resultado
