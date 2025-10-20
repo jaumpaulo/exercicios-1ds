@@ -1,54 +1,37 @@
-// Antes de iniciar, instale o prompt-sync para entrada de dados e o jest para testar
-// Comando: npm i prompt-sync; npm i -D jest
+let prompt = require("prompt-sync")()
 
-// CRIE UMA LÓGICA ABAIXO
-let prompt = require('prompt-sync')()
-
-let dia = 0
+let continuar
+let contadorDias = 0
 let resumo = ""
-let continuar = "S"
 let totalGeral = 0
 
 do {
-    dia++
+    let meta = parseInt(prompt("Quantas peças devem ser produzidas no turno? "))
 
-    console.log("Quantas peças a máquina deve produzir no turno?")
-    let entrada = prompt("")
-
-    let valor = parseInt(entrada)
-
-    while (entrada == "" || (valor !== valor) || valor < 1) {
-        console.log("Valor inválido. Digite um número maior que 0.")
-        entrada = prompt("")
-        valor = parseInt(entrada)
+    let producao = 0
+    while (producao < meta) {
+        producao++
+        console.log(`Peça ${producao} produzida com sucesso.`)
     }
 
-    let produzidas = 0
-
-    while (produzidas < valor) {
-        produzidas++
-        console.log(`Peça ${produzidas} produzida com sucesso.`)
-    }
-
-    console.log(`Total produzido: ${produzidas}`)
-
-    if (produzidas == valor) {
+    console.log(`Total produzido: ${producao}`)
+    if (producao === meta) {
         console.log("Meta alcançada!")
     } else {
         console.log("Meta não alcançada.")
     }
 
-    totalGeral += produzidas
+    contadorDias++
+    totalGeral += producao
+    resumo += `Dia ${contadorDias}: ${producao} peças produzidas\n`
 
-    resumo += `Dia ${dia}: ${produzidas} peças produzidas\n`
-
-    console.log("Resumo dos dias anteriores:")
+    console.log("\nResumo dos dias anteriores:")
+    for (let i = 1; i <= contadorDias; i++) {}
     console.log(resumo)
     console.log(`Total geral: ${totalGeral} peças produzidas`)
 
-    console.log("Deseja simular outro turno? (S/N)")
-    continuar = prompt("")
+    continuar = prompt("Deseja simular outro turno? (S/N) ").toUpperCase()
 
-} while (continuar == "S" || continuar == "s")
+} while (continuar === "S")
 
 console.log("Encerrando sistema de produção...")
