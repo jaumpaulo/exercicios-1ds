@@ -23,7 +23,7 @@ do {
 
     contadorDias++
     totalGeral += producao
-    resumo += `Dia ${contadorDias}: ${producao} peças produzidas\n`
+    resumo += `\nDia ${contadorDias}: ${producao} peças produzidas`
 
     console.log("\nResumo dos dias anteriores:")
     for (let i = 1; i <= contadorDias; i++) {}
