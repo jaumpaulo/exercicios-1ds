@@ -25,13 +25,11 @@ do {
     totalGeral += producao
     resumo += `\nDia ${contadorDias}: ${producao} peças produzidas`
 
-    console.log("\nResumo dos dias anteriores:")
-    for (let i = 1; i <= contadorDias; i++) {}
-    console.log(resumo)
-    console.log(`Total geral: ${totalGeral} peças produzidas`)
-
     continuar = prompt("Deseja simular outro turno? (S/N) ").toUpperCase()
 
 } while (continuar === "S")
 
+console.log("\nResumo dos dias anteriores:")
+console.log(resumo)
+console.log(`Total geral: ${totalGeral} peças produzidas`)
 console.log("Encerrando sistema de produção...")
