@@ -10,4 +10,4 @@ carro.cor = "Preto"
 carro.preco = 120000
 console.log(carro)
 // === NÃO MODIFIQUE OU ADICIONE NADA ABAIXO ============
-module.exports = { produto }
+module.exports = { carro }
