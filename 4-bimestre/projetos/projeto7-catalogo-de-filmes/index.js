@@ -1,5 +1,5 @@
 // CRIE UMA LÓGICA ABAIXO
-const prompt = require("prompt-sync")()
+let prompt = require("prompt-sync")()
 
 let filme1 = {}
 let filme2 = {}
